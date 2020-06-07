@@ -13,6 +13,7 @@ install:
 before_script:
   - echo "no tests"
 
+# Steps to create Docker image
 script:
   - docker --version # print the version for logging
   - docker build -t simple-node .
