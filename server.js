@@ -1,9 +1,10 @@
+// set local variable populated by the environment variable $DOCKER_USERNAME
+const USER_NAME = process.env.DOCKER_USERNAME;
+
 // edit comment and commit to trigger Travis
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-const USER_NAME = process.env.DOCKER_USERNAME
 
 async function main() {
   while(true) {
