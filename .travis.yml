@@ -5,6 +5,9 @@ node_js:
 services:
   - docker
 
+env:
+  - NAME=ConnieS
+
 # Pre-testing installs
 install:
   - echo "nothing needs to be installed"
@@ -16,7 +19,7 @@ before_script:
 # Steps to create Docker image
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node --build-arg NAME=${NAME} .
+  - docker build -t simple-node --build-arg NAME=$NAME .
   - docker tag simple-node "$DOCKERHUB_USERNAME"/simple-node:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
